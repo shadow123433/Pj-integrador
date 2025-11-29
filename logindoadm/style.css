@@ -1,0 +1,74 @@
+/* Fundo animado */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(270deg, #00FF00, #0000FF, #FF0000, #FF8C00);
+  background-size: 800% 800%;
+  animation: gradientBG 20s ease infinite;
+}
+
+/* Animação suave do fundo */
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 25% 50%; }
+  50%  { background-position: 50% 50%; }
+  75%  { background-position: 75% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Caixa de login */
+.login-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  text-align: center;
+  color: white;
+  width: 300px;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #00FF88;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 14px;
+}
+
+.login-container input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(180deg, #00D35E, #008f3f);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container button:hover {
+  background: linear-gradient(180deg, #00ff77, #00a34c);
+}
+
+#mensagem {
+  margin-top: 10px;
+  color: #ff5757;
+  font-weight: bold;
+}

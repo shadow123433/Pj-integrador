@@ -1,0 +1,409 @@
+/* Fundo estilo Cybercom682 - leve e com padrão */
+.container {
+  position: fixed; /* fixa o fundo na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* manda o fundo para trás do conteúdo */
+  background-color: #191a1a;
+  --color: rgba(0, 180, 30, 0.3);
+  background-image: 
+    linear-gradient(
+      180deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      45deg,
+      transparent 24%,
+      var(--color) 35%,
+      var(--color) 26%,
+      transparent 17%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+}
+
+
+
+/* === Animação do gradiente === */
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }   /* No início, o gradiente começa à esquerda */
+  25%  { background-position: 25% 50%; }  /* Move o fundo para a direita em 25% do tempo */
+  50%  { background-position: 50% 50%; }  /* No meio da animação, o gradiente chega ao centro */
+  75%  { background-position: 75% 50%; }  /* 75% do ciclo — o fundo continua se movendo para a direita */
+  100% { background-position: 100% 50%; } /* Final da animação — completa o deslocamento e volta ao início */
+}
+
+/* === Header === */
+header {
+  max-width: 800px; /* Define a largura máxima do cabeçalho */
+  margin: 20px auto; /* Centraliza o header horizontalmente e adiciona 20px de margem vertical */
+  padding: 20px; /* Adiciona espaçamento interno de 20px em todos os lados */
+
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo preto translúcido com 60% de opacidade */
+  color: white; /* Define a cor do texto para branco */
+  border-radius: 8px; /* Arredonda os cantos do header */
+  text-align: center; /* Centraliza o texto */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra abaixo do header */
+}
+
+header h1 {
+  margin-bottom: 10px; /* Espaçamento inferior de 10px entre o título e o próximo elemento */
+}
+
+/* === Navegação === */
+nav ul {
+  list-style: none; /* Remove os marcadores padrão da lista (bolinhas) */
+  padding: 0; /* Remove o preenchimento padrão da lista */
+  text-align: center; /* Centraliza o conteúdo da lista */
+}
+
+nav ul li {
+  display: inline-block; /* Exibe os itens da lista na horizontal */
+  margin: 0 15px; /* Adiciona espaçamento horizontal entre os itens */
+}
+
+nav ul li a {
+  color: white !important; /* Define a cor do link como branca (forçado com !important) */
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  font-weight: bold; /* Deixa o texto dos links em negrito */
+  transition: color 0.3s ease; /* Cria uma transição suave na cor do link ao passar o mouse */
+}
+
+nav ul li a:hover {
+  color: lightblue !important; /* Muda a cor do link para azul claro quando o mouse passa por cima */
+}
+
+/* === Seções === */
+section {
+  max-width: 800px; /* Define a largura máxima da seção */
+  margin: 20px auto; /* Centraliza a seção e adiciona espaçamento vertical */
+  padding: 20px; /* Espaçamento interno de 20px */
+
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo preto translúcido */
+  color: white; /* Cor do texto branca */
+  border-radius: 8px; /* Arredonda os cantos da seção */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra abaixo da seção para profundidade */
+}
+
+/* === Botões === */
+button {
+  padding: 12px 20px; /* Define o espaçamento interno (vertical e horizontal) do botão */
+  background-color: green; /* Cor de fundo verde */
+  color: white; /* Cor do texto branca */
+  border: none; /* Remove a borda padrão do botão */
+  border-radius: 6px; /* Arredonda os cantos */
+  cursor: pointer; /* Muda o cursor para “mãozinha” ao passar o mouse */
+  font-weight: bold; /* Texto em negrito */
+  transition: background-color 0.3s ease; /* Suaviza a mudança de cor de fundo ao passar o mouse */
+}
+
+button:hover {
+  background-color: darkgreen; /* Muda o fundo do botão para verde escuro quando o mouse passa por cima */
+}
+
+/* === Inputs e Select === */
+input,
+select {
+  width: 100%; /* Faz o input/seleção ocupar toda a largura do container */
+  padding: 10px; /* Adiciona espaçamento interno */
+  margin-bottom: 15px; /* Adiciona espaço entre os campos */
+  font-size: 16px; /* Define o tamanho do texto dentro dos campos */
+  border: 1px solid #ccc; /* Cria uma borda cinza clara */
+  border-radius: 6px; /* Arredonda os cantos dos campos */
+}
+
+/* === Lista de Uniformes === */
+#uniformes-lista .uniforme {
+  display: flex; /* Coloca os elementos (imagem e informações) lado a lado */
+  align-items: center; /* Alinha verticalmente os itens ao centro */
+  border-bottom: 1px solid #ddd; /* Adiciona uma linha separadora entre os itens */
+  padding: 10px 0; /* Espaçamento vertical entre os itens */
+}
+
+.uniforme img {
+  width: 100px; /* Define a largura da imagem */
+  height: 100px; /* Define a altura da imagem */
+  object-fit: cover; /* Faz a imagem preencher o espaço mantendo a proporção */
+  margin-right: 15px; /* Espaçamento entre a imagem e o texto */
+  border-radius: 8px; /* Arredonda os cantos da imagem */
+}
+
+.uniforme-info h3 {
+  margin: 0; /* Remove a margem padrão do título do uniforme */
+}
+
+/* === Carrinho === */
+#itens-carrinho .item-carrinho {
+  display: flex; /* Exibe nome e valor lado a lado */
+  justify-content: space-between; /* Coloca um item à esquerda e outro à direita */
+  padding: 8px 0; /* Espaçamento vertical */
+  border-bottom: 1px solid #ddd; /* Linha separando os itens */
+}
+
+#total {
+  text-align: right; /* Alinha o total à direita */
+  font-weight: bold; /* Deixa o total em negrito */
+  margin-top: 10px; /* Espaçamento acima do total */
+}
+/* === Modal de Finalização === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-conteudo {
+  background: rgba(255,255,255,0.95);
+  color: #000;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  animation: aparecer 0.3s ease;
+}
+
+.modal-conteudo label {
+  font-weight: bold;
+}
+
+.modal-conteudo input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-conteudo button {
+  width: 100%;
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.fechar {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* Botões fale conosco e entrega */
+.botoes-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.botoes-contato button {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: fit-content;
+  transition: 0.3s;
+}
+
+.botoes-contato button:hover {
+  background-color: #0a800a;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+
+#pedidos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 🔹 Cria espaço entre os botões */
+  margin-top: 20px;
+}
+
+#pedidos-container button {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#pedidos-container button:hover {
+  background-color: #007a00;
+  transform: scale(1.05);
+}
+
+
+/* ===== Modal da Imagem Ampliada ===== */
+.modal-imagem {
+  display: none; /* escondido até clicarem na imagem */
+  position: fixed;
+  z-index: 2000; /* maior que os outros modais */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.imagem-conteudo {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-imagem.show .imagem-conteudo {
+  transform: scale(1);
+}
+
+.fechar-imagem {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+
+/* === Formulário Fale Conosco estilo modal branco === */
+.formulario-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+.formulario-wrapper.mostrar {
+  display: flex !important;
+}
+
+#formulario-pedidos {
+  background: #ffffff;
+  color: #000;
+  padding: 30px;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+#formulario-pedidos h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Inputs estilo modal */
+#formulario-pedidos input,
+#formulario-pedidos textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* Botões */
+#formulario-pedidos button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+  background: #008000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#formulario-pedidos button:hover {
+  background: #006400;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uniformes Escolares - Uniformes martins</title>
+
+  <!-- Estilo principal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ícones (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container"></div>
+
+  <header>
+    <h1 style="color: #00FF00;">Uniformes Martins</h1>
+  </header>
+
+  <section id="introducao">
+  <h2 style="color: #00FF00;">Como Funciona?</h2>
+    <p style="color: #00FF00;">
+      1. Selecione a escola do seu filho. <br />
+      2. Veja os uniformes disponíveis. <br />
+      3. Adicione os uniformes ao carrinho. <br />
+      4. Preencha as informações de entrega e depois você pode finalizar a compra. <br />
+      5. Escolha a forma de pagamento que irá aparecer. <br />
+      6. Se quiser entre em contato com nossa loja pelo Fale conosco. <br />
+      7. Temos atendimento via WhatsApp. <br />
+    </p>
+  </section>
+
+  <section id="selecao-escola">
+    <h2 style="color: #00FF00;">Escolha a Escola</h2>
+    <p style="color: #00FF00;">
+      Selecione uma escola e veja se há uniformes disponíveis. Se não encontrar a escola desejada, entre em contato com a administração.
+    </p>
+
+    <select id="escola" style="color:#00FF00; background:#111; border:1px solid #00FF00;">
+  <option value="">Clique aqui e selecione uma escola</option>
+</select>
+
+
+    <button onclick="mostrarUniformes()">Ver Uniformes</button>
+  </section>
+
+  <section id="uniformes" style="display: none;">
+    <h2>Uniformes para <span id="nome-escola"></span></h2>
+    <div id="uniformes-lista"></div>
+  </section>
+
+  <section id="carrinho" style="display: none;">
+    <h3>Carrinho de Compras</h3>
+    <div id="itens-carrinho"></div>
+    <div id="total"></div>
+    <button id="finalizarCompra">Finalizar Compra</button>
+  </section>
+
+  <section id="pedidos-container">
+    <button id="btn-pedidos" onclick="mostrarFormularioPedidos()">Fale conosco</button>
+    <button id="abrirEntrega">Informações de Entrega</button>
+
+    <div id="modalEntrega" class="modal">
+  <div class="modal-content">
+    <h2>Informações de Entrega</h2>
+
+    <input type="text" id="nomeEntrega" placeholder="Nome completo" />
+
+    <!-- 🔹 Campo TELEFONE permitindo apenas números -->
+    <input 
+      type="text" 
+      id="telefoneEntrega" 
+      placeholder="Telefone de contato" 
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+    />
+
+    <input type="text" id="localEntrega" placeholder="Local da entrega" />
+
+    <button onclick="salvarEntrega()">Enviar</button>
+    <button onclick="fecharEntrega()">Fechar</button>
+  </div>
+</div>
+  </section>
+
+<div class="formulario-wrapper" id="wrapperFormulario">
+  <section id="formulario-pedidos">
+    <h2>Deixe aqui sua sugestão</h2>
+
+    <form id="formularioContato" action="https://formsubmit.co/thiagoribeirodossantos965@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" id="nomeCliente" name="nomeCliente" placeholder="Nome completo" required>
+      <textarea id="pedidoTexto" name="pedidoTexto" rows="4" placeholder="Sua mensagem aqui" required></textarea>
+
+      <button type="submit">Enviar</button>
+      <button type="button" onclick="fecharFormularioPedidos()">Fechar</button>
+    </form>
+  </section>
+</div>
+
+
+
+  <!-- Botão do WhatsApp -->
+  <a href="https://api.whatsapp.com/send?phone=5527998040952&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." 
+     target="_blank" 
+     class="botao-whatsapp" 
+     title="Fale conosco pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <style>
+    .botao-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.2s;
+      z-index: 9999;
+    }
+    .botao-whatsapp:hover {
+      background-color: #1ebe5d;
+      transform: scale(1.1);
+    }
+  </style>
+
+  <!-- Modal de pagamento -->
+  <div id="modalPagamento" style="display:none; position:fixed; z-index:10000; left:0; top:0; right:0; bottom:0; background: rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:30px; border-radius:12px; width:340px; max-width:90%; text-align:center; position:relative;">
+      <span id="fecharModal" style="position:absolute; top:10px; right:15px; font-size:26px; cursor:pointer; color:#888;">&times;</span>
+      <h2>Escolha sua forma de pagamento</h2>
+      <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:20px;">
+        <a href="#" class="forma-pagamento" data-nome="PIX" style="cursor:pointer;">
+          <div>💸 PIX</div>
+        </a>
+        <a href="#" class="forma-pagamento" data-nome="Cartão" style="cursor:pointer;">
+          <div>💳 Cartão</div>
+        </a>
+        <a href="#" class="forma-pagamento" data-nome="PicPay" style="cursor:pointer;">
+          <div>🅿️ PicPay</div>
+        </a>
+        <a href="#" class="forma-pagamento" data-nome="Mercado Pago" style="cursor:pointer;">
+          <div>💰 Mercado Pago</div>
+        </a>
+        <a href="#" class="forma-pagamento" data-nome="PayPal" style="cursor:pointer;">
+          <div>💲 PayPal</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Primeiro vem o script principal (carrega as escolas) -->
+  <script src="script.js"></script>
+
+  <!-- ✅ Depois vem o script do modal -->
+  <script>
+    const btnFinalizar = document.getElementById('finalizarCompra');
+    const modal = document.getElementById('modalPagamento');
+    const fecharModal = document.getElementById('fecharModal');
+    let formaSelecionada = null;
+
+    btnFinalizar.addEventListener('click', () => {
+      if (!formaSelecionada) {
+        modal.style.display = 'flex';
+      } else {
+        alert('Compra finalizada com sucesso!');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => {
+          formaSelecionada = null;
+          document.getElementById('carrinho').style.display = 'none';
+          document.getElementById('uniformes').style.display = 'none';
+          document.getElementById('itens-carrinho').innerHTML = '';
+          document.getElementById('total').innerHTML = '';
+          document.getElementById('escola').value = '';
+          document.getElementById('nome-escola').textContent = '';
+        }, 300);
+      }
+    });
+
+    fecharModal.addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.style.display = 'none'; });
+
+    document.querySelectorAll('.forma-pagamento').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        formaSelecionada = el.getAttribute('data-nome');
+        modal.style.display = 'none';
+        alert('Forma de pagamento selecionada: ' + formaSelecionada);
+      });
+    });
+  </script>
+
+  <!-- Modal para visualizar imagem ampliada -->
+  <div id="modalImagem" class="modal-imagem">
+    <span class="fechar-imagem">&times;</span>
+    <img id="imagemAmpliada" class="imagem-conteudo" src="" alt="Uniforme ampliado">
+  </div>
+
+  <script>
+  // ==== Modal de imagem ampliada ====
+  const modalImagem = document.getElementById("modalImagem");
+  const imagemAmpliada = document.getElementById("imagemAmpliada");
+  const fecharImagem = document.querySelector(".fechar-imagem");
+
+  // Escuta qualquer clique na página
+  document.addEventListener("click", (e) => {
+    // Detecta se o clique foi em uma imagem dentro da lista de uniformes
+    if (e.target.tagName === "IMG" && e.target.closest("#uniformes-lista")) {
+      imagemAmpliada.src = e.target.src;
+      modalImagem.style.display = "flex";
+    }
+  });
+
+  // Fechar modal ao clicar no X
+  fecharImagem.addEventListener("click", () => {
+    modalImagem.style.display = "none";
+  });
+
+  // Fechar ao clicar fora da imagem
+  modalImagem.addEventListener("click", (e) => {
+    if (e.target === modalImagem) {
+      modalImagem.style.display = "none";
+    }
+  });
+  </script>
+
+  <!-- Mensagem flutuante -->
+  <div id="mensagem-adicao" 
+       style="display:none; position:fixed; bottom:20px; right:20px; 
+       background-color:#00ff00; color:#000; padding:10px 20px; 
+       border-radius:10px; font-weight:bold; box-shadow:0 0 10px #00ff00; 
+       z-index:9999; transition:opacity 0.5s ease;">
+  </div>
+
+</body>
+</html>

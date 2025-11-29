@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Uniformes Martins - Painel Admin</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container"></div>
+
+<h1 id="titulo-site">Uniformes Martins</h1>
+
+<section>
+  <h2>Como Funciona?</h2>
+  <div id="texto-como-funciona">
+    <!-- texto "como funciona" preenchido via JS -->
+  </div>
+</section>
+
+<section>
+  <h2>Escolha a Escola</h2>
+  <p>Selecione uma escola e veja se há uniformes disponíveis. Se não encontrar a escola desejada, entre em contato com a administração.</p>
+  <select id="escola-select">
+    <option value="">Clique aqui e selecione uma escola</option>
+  </select>
+  <button id="btn-ver-uniformes" class="btn">Ver Uniformes</button>
+</section>
+
+<section id="uniformes" style="display:none;">
+  <h2>Uniformes para <span id="nome-escola"></span></h2>
+  <div id="uniformes-lista"></div>
+  <button id="btn-adicionar-uniforme" class="btn">Adicionar Uniforme</button>
+</section>
+
+<section class="botoes-gerais">
+  <!-- ❌ BOTÃO REMOVIDO: Gerenciar Escolas -->
+  <button id="btn-editar-como-funciona" class="btn">Editar Como Funciona</button>
+  <button id="btn-editar-titulo" class="btn">Editar Título</button>
+</section>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<!-- MODAIS -->
+
+<!-- ❌ REMOVIDO: Modal Escola -->
+
+<!-- Modal Uniforme -->
+<div id="modal-uniforme" class="modal">
+  <div class="modal-content">
+    <h3 id="modal-uniforme-titulo">Editar Uniforme</h3>
+    <input type="text" id="modal-uniforme-nome" placeholder="Nome do uniforme" />
+    <input type="number" id="modal-uniforme-preco" placeholder="Preço (R$)" step="0.01" min="0" />
+    <input type="text" id="modal-uniforme-tamanhos" placeholder="Tamanhos (ex: P, M, G)" />
+    <input type="text" id="modal-uniforme-cores" placeholder="Cores (ex: Branco, Verde)" />
+    <input type="text" id="modal-uniforme-img" placeholder="URL da imagem" />
+    <img id="modal-uniforme-preview" src="" alt="Preview" style="display:none; max-width:150px; margin-top:8px; border:1px solid #0a0; border-radius:6px;" />
+    <div class="modal-buttons">
+      <button id="modal-uniforme-salvar" class="btn">Salvar</button>
+      <button id="modal-uniforme-excluir" class="btn btn-danger">Excluir</button>
+      <button data-close="modal-uniforme" class="btn btn-close">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Texto -->
+<div id="modal-texto" class="modal">
+  <div class="modal-content">
+    <h3 id="modal-texto-titulo">Editar Texto</h3>
+    <textarea id="modal-texto-input" rows="8" style="width:100%;"></textarea>
+    <div class="modal-buttons">
+      <button id="modal-texto-salvar" class="btn">Salvar</button>
+      <button data-close="modal-texto" class="btn btn-close">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ❌ REMOVIDO: Modal Gerenciar Escolas -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
