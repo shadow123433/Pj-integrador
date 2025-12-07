@@ -552,3 +552,31 @@ button {
 .botao-whatsapp:hover {
   transform: scale(1.1); /* leve aumento ao passar o mouse */
 }
+
+
+
+
+
+/* Ajustes para telas menores (celular) */
+@media (max-width: 768px) {
+  body, p {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  select {
+    font-size: 14px;
+  }
+}
