@@ -407,3 +407,46 @@ select {
 #formulario-pedidos button:hover {
   background: #006400;
 }
+
+
+
+
+
+
+
+section {
+    border: 3px solid #00ff00;
+    border-radius: 12px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+    box-shadow:
+        0 0 15px #00ff00,
+        0 0 25px #00ff00 inset,
+        0 0 25px #00ff00;
+    margin: 25px 0;
+}
+
+
+
+header {
+    border: 3px solid #00ff00;
+    border-radius: 12px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.65);
+    box-shadow: 
+        0 0 15px #00ff00,
+        0 0 30px #00ff00 inset,
+        0 0 30px #00ff00;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+
+section,
+header {
+    width: 70%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
