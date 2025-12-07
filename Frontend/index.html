@@ -63,7 +63,7 @@
     <button id="abrirEntrega">Informações de Entrega</button>
 
     <div id="modalEntrega" class="modal">
-  <div class="modal-content">
+  <div class="modal-content">  <!--serve pra centralizar o formulário na tela do usuário-->
     <h2>Informações de Entrega</h2>
 
     <input type="text" id="nomeEntrega" placeholder="Nome completo" />
@@ -129,7 +129,7 @@
     }
     .botao-whatsapp:hover {
       background-color: #1ebe5d;
-      transform: scale(1.1);
+      transform: scale(1.1); 
     }
   </style>
 
@@ -158,10 +158,10 @@
     </div>
   </div>
 
-  <!-- ✅ Primeiro vem o script principal (carrega as escolas) -->
+  <!--  Primeiro vem o script principal (carrega as escolas) -->
   <script src="script.js"></script>
 
-  <!-- ✅ Depois vem o script do modal -->
+  <!-- Depois vem o script do modal -->
   <script>
     const btnFinalizar = document.getElementById('finalizarCompra');
     const modal = document.getElementById('modalPagamento');
@@ -234,7 +234,7 @@
   });
   </script>
 
-  <!-- Mensagem flutuante -->
+  <!-- Mensagem que aparece na tela ao adicionar ao carrinho os itens e etc -->
   <div id="mensagem-adicao" 
        style="display:none; position:fixed; bottom:20px; right:20px; 
        background-color:#00ff00; color:#000; padding:10px 20px; 
