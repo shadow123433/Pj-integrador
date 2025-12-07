@@ -544,7 +544,7 @@ button {
   animation: neonBorderPulse 2.5s ease-in-out infinite; /* brilho nas bordas */
   transition: transform 0.2s ease;
   position: fixed;
-  bottom: 25px;
+  bottom: 90px;
   right: 25px;
   z-index: 9999;
 }
@@ -554,29 +554,3 @@ button {
 }
 
 
-
-
-
-/* Ajustes para telas menores (celular) */
-@media (max-width: 768px) {
-  body, p {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  select {
-    font-size: 14px;
-  }
-}
