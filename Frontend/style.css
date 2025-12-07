@@ -420,26 +420,25 @@ section {
     padding: 20px;
     background: rgba(0, 0, 0, 0.55);
     box-shadow:
-        0 0 15px #00ff00,
-        0 0 25px #00ff00 inset,
-        0 0 25px #00ff00;
+        0 0 8px rgba(0, 255, 0, 0.6),        /* brilho externo menor e mais suave */
+        0 0 15px rgba(0, 255, 0, 0.4) inset,  /* brilho interno mais leve */
+        0 0 15px rgba(0, 255, 0, 0.5);        /* brilho geral mais contido */
     margin: 25px 0;
 }
-
-
 
 header {
     border: 3px solid #00ff00;
     border-radius: 12px;
     padding: 25px;
     background: rgba(0, 0, 0, 0.65);
-    box-shadow: 
-        0 0 15px #00ff00,
-        0 0 30px #00ff00 inset,
-        0 0 30px #00ff00;
+    box-shadow:
+        0 0 10px rgba(0, 255, 0, 0.7),
+        0 0 20px rgba(0, 255, 0, 0.5) inset,
+        0 0 20px rgba(0, 255, 0, 0.6);
     margin-bottom: 40px;
     text-align: center;
 }
+
 
 
 
@@ -449,4 +448,110 @@ header {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+
+
+
+
+
+select {
+    color: #00ff00;                     /* texto verde */
+    background-color: rgba(0, 0, 0, 0.55);  /* fundo preto transparente */
+    border: 2px solid #00ff00;          /* borda verde neon */
+    border-radius: 8px;                  /* bordas arredondadas */
+    padding: 10px 15px;
+    font-size: 16px;
+    box-shadow:
+        0 0 8px rgba(0, 255, 0, 0.7),  /* brilho suave */
+        inset 0 0 10px rgba(0, 255, 0, 0.4);
+    outline: none;                      /* tira a borda padrão do foco */
+    transition: box-shadow 0.3s ease;
+}
+
+/* efeito glow ao focar no select */
+select:focus {
+    box-shadow:
+        0 0 12px rgba(0, 255, 0, 1),
+        inset 0 0 15px rgba(0, 255, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animação de brilho nas bordas */
+@keyframes neonBorderPulse {
+  0%, 100% {
+    box-shadow: 0 0 3px #00ff00; /* brilho mais fraco */
+  }
+  50% {
+    box-shadow: 0 0 12px #00ff00; /* brilho mais intenso */
+  }
+}
+
+button {
+  border: 2px solid #00ff00;      /* borda verde */
+  border-radius: 8px;
+  background-color: #00ff00;       /* fundo verde, pode mudar se quiser outro */
+  color: #000;                     /* texto preto para contraste */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  animation: neonBorderPulse 2.5s ease-in-out infinite; /* animação só nas bordas */
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00ff00; /* mantém verde no hover */
+}
+
+
+
+
+/* Botão WhatsApp menor e circular com brilho nas bordas */ 
+.botao-whatsapp {
+  border: 2px solid #00ff00;
+  border-radius: 50%;
+  background-color: #00ff00; /* fundo verde */
+  color: #000;                /* ícone em preto */
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  animation: neonBorderPulse 2.5s ease-in-out infinite; /* brilho nas bordas */
+  transition: transform 0.2s ease;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+}
+
+.botao-whatsapp:hover {
+  transform: scale(1.1); /* leve aumento ao passar o mouse */
 }
