@@ -524,9 +524,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #00ff00; /* mantém verde no hover */
-}
 
 
 
