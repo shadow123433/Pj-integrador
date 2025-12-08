@@ -578,3 +578,10 @@ button {
     font-size: 24px;
   }
 }
+
+
+.botoes-contato button {
+  padding: 6px 12px;      /* deixa o botão menor */
+  font-size: 14px;        /* diminui o texto */
+  width: fit-content;     /* mantém o tamanho só do conteúdo */
+}
