@@ -544,7 +544,7 @@ button {
   animation: neonBorderPulse 2.5s ease-in-out infinite; /* brilho nas bordas */
   transition: transform 0.2s ease;
   position: fixed;
-  bottom: 90px;
+  bottom: 200px;
   right: 25px;
   z-index: 9999;
 }
