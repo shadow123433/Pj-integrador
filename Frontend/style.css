@@ -217,12 +217,16 @@ select {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
-/* Botões fale conosco e entrega */
+
 .botoes-contato {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;  /* Aumenta o espaço entre os botões */
+  position: fixed;
+  bottom: 20px; /* Posiciona o container de botões a 20px do fundo */
+  right: 25px;  /* Mantém a distância da lateral direita */
 }
+
 
 .botoes-contato button {
   background-color: green;
@@ -544,7 +548,7 @@ button {
   animation: neonBorderPulse 2.5s ease-in-out infinite; /* brilho nas bordas */
   transition: transform 0.2s ease;
   position: fixed;
-  bottom: 200px;
+  bottom: 300px;
   right: 25px;
   z-index: 9999;
 }
@@ -552,6 +556,7 @@ button {
 .botao-whatsapp:hover {
   transform: scale(1.1); /* leve aumento ao passar o mouse */
 }
+
 
 
 
@@ -579,9 +584,30 @@ button {
   }
 }
 
+/* Botões Fale Conosco e Informações de Entrega */
+.botoes-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Ajuste a distância entre os botões */
+  position: fixed;
+  bottom: 80px; /* Distância do rodapé */
+  right: 25px;  /* Distância da lateral direita */
+}
 
 .botoes-contato button {
-  padding: 6px 12px;      /* deixa o botão menor */
-  font-size: 14px;        /* diminui o texto */
-  width: fit-content;     /* mantém o tamanho só do conteúdo */
+  padding: 6px 12px;      /* Deixa o botão menor */
+  font-size: 14px;        /* Texto menor */
+  width: fit-content;     /* Ajusta ao tamanho do conteúdo */
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover efeito para os botões */
+.botoes-contato button:hover {
+  background-color: #0a800a;
 }
