@@ -414,10 +414,6 @@ select {
 
 
 
-
-
-
-
 section {
     border: 3px solid #00ff00;
     border-radius: 12px;
@@ -455,11 +451,6 @@ header {
 }
 
 
-
-
-
-
-
 select {
     color: #00ff00;                     /* texto verde */
     background-color: rgba(0, 0, 0, 0.55);  /* fundo preto transparente */
@@ -481,23 +472,6 @@ select:focus {
         inset 0 0 15px rgba(0, 255, 0, 0.7);
     background-color: rgba(0, 0, 0, 0.7);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
