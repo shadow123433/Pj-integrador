@@ -617,3 +617,8 @@ button {
   transform: scale(1.15);
   background-color: #1ebe5d;
 }
+
+/*evita o puxao em branco no navegador*/
+body {
+  overscroll-behavior-y: none;
+}
