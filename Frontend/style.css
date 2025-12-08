@@ -116,8 +116,7 @@ button:hover {
 }
 
 /* === Inputs e Select === */
-input,
-select {
+input {
   width: 100%; /* Faz o input/seleção ocupar toda a largura do container */
   padding: 10px; /* Adiciona espaçamento interno */
   margin-bottom: 15px; /* Adiciona espaço entre os campos */
@@ -452,26 +451,44 @@ header {
 
 
 select {
-    color: #00ff00;                     /* texto verde */
-    background-color: rgba(0, 0, 0, 0.55);  /* fundo preto transparente */
-    border: 2px solid #00ff00;          /* borda verde neon */
-    border-radius: 8px;                  /* bordas arredondadas */
-    padding: 10px 15px;
-    font-size: 16px;
+    color: #000;
+    background: linear-gradient(135deg, #00ff66, #009933);
+    border: 3px solid #00ff00;
+    border-radius: 10px;
+    padding: 10px 14px; /* diminuído de 14px 18px */
+    font-size: 16px;    /* diminuído de 18px */
+    font-weight: bold;
     box-shadow:
-        0 0 8px rgba(0, 255, 0, 0.7),  /* brilho suave */
-        inset 0 0 10px rgba(0, 255, 0, 0.4);
-    outline: none;                      /* tira a borda padrão do foco */
-    transition: box-shadow 0.3s ease;
+        0 0 12px #00ff00,
+        0 0 20px rgba(0, 255, 0, 0.8),
+        inset 0 0 15px rgba(0, 255, 0, 0.6);
+    outline: none;
+    animation: pulseSelect 1.4s infinite ease-in-out;
 }
 
-/* efeito glow ao focar no select */
-select:focus {
-    box-shadow:
-        0 0 12px rgba(0, 255, 0, 1),
-        inset 0 0 15px rgba(0, 255, 0, 0.7);
-    background-color: rgba(0, 0, 0, 0.7);
+
+/* animação exclusiva para o SELECT */
+@keyframes pulseSelect {
+    0% {
+        box-shadow:
+            0 0 12px #00ff00,
+            0 0 20px rgba(0, 255, 0, 0.8),
+            inset 0 0 15px rgba(0, 255, 0, 0.6);
+    }
+    50% {
+        box-shadow:
+            0 0 20px #00ff00,
+            0 0 30px rgba(0, 255, 0, 1),
+            inset 0 0 20px rgba(0, 255, 0, 0.9);
+    }
+    100% {
+        box-shadow:
+            0 0 12px #00ff00,
+            0 0 20px rgba(0, 255, 0, 0.8),
+            inset 0 0 15px rgba(0, 255, 0, 0.6);
+    }
 }
+
 
 
 
@@ -621,4 +638,22 @@ button {
 /*evita o puxao em branco no navegador*/
 body {
   overscroll-behavior-y: none;
+}
+
+select {
+    background: linear-gradient(135deg, #00ff66, #009933) !important;
+    color: #000 !important;
+}
+
+
+#selecao-escola select {
+  display: block;   /* força o select ocupar uma linha própria */
+  margin-bottom: 15px; /* espaço abaixo do select */
+  width: 100%; /* opcional, para o select ocupar toda a largura disponível */
+  max-width: 400px; /* limite máximo de largura, opcional */
+}
+
+#selecao-escola button {
+  display: block;   /* força o botão em uma linha própria */
+  max-width: 200px; /* para não ficar muito largo, opcional */
 }
